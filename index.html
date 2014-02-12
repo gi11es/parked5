@@ -1,0 +1,30 @@
+<meta charset="utf-8"> 
+<title>Votre adresse e-mail ou votre nom de domaine basé sur votre nom de famille</title>
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
+<style>
+body {
+	background-color: #eec;
+	font-family: 'Lobster Two', cursive;
+	font-size: 60px;
+}
+div {
+	color: #333;
+	text-align: center;
+	margin-top: 150px;
+}
+a {
+	color: #33c;
+}
+</style>
+<div>Votre adresse e-mail prenom@<span class="domain"></span> pour 2€/mois<br>
+<br>
+Votre nom de domaine prenom.<span class="domain"></span> pour 5€/mois<br>
+<br>
+Contactez-nous: <a id="link" href="mailto:info@massiveleap.com?subject=">info@massiveleap.com</a></div>
+<script>
+document.getElementById('link').setAttribute('href', document.getElementById('link').getAttribute('href') + window.location.host);
+var elems = document.querySelectorAll('.domain');
+for (var i in elems) {
+	elems[i].innerHTML = window.location.host;
+}
+</script>
